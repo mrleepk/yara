@@ -47,9 +47,7 @@ condition:
  (filesize < 50MB) and (uint16(0) == 0x5a4d) and all of them
 }
 
-/*
-TOOLS
-*/
+
 rule ADFindExeOnDisk
 {
 meta:
@@ -101,9 +99,7 @@ condition:
 }
 
 
-/*
-Persistence
-*/
+
 rule GOSimpleTunnelExeOnDisk
 {
 meta:
@@ -178,9 +174,7 @@ condition:
 }
 
 
-/*
-Exfiltration
-*/
+
 rule rclone_binaries {
   meta:
     author      = "Elida Leite"
@@ -240,9 +234,7 @@ condition:
  (filesize < 75MB) and (uint16(0) == 0x5a4d) and all of them
 }
 
-/*
-Credential Access
-*/
+
 rule ProcdumpExeOnDisk
 {
 meta:

@@ -1,8 +1,3 @@
-
-/*
-RATS
-*/
-
 rule AnyDeskExeOnDisk
 {
 meta:

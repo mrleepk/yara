@@ -1,40 +1,8 @@
-/*
-______            _              __   _____  ______  ___   ______      _           
-| ___ \          | |             \ \ / / _ \ | ___ \/ _ \  | ___ \    | |          
-| |_/ /__ _ _ __ | |_ ___  _ __   \ V / /_\ \| |_/ / /_\ \ | |_/ /   _| | ___  ___ 
-|    // _` | '_ \| __/ _ \| '__|   \ /|  _  ||    /|  _  | |    / | | | |/ _ \/ __|
-| |\ \ (_| | |_) | || (_) | |      | || | | || |\ \| | | | | |\ \ |_| | |  __/\__ \
-\_| \_\__,_| .__/ \__\___/|_|      \_/\_| |_/\_| \_\_| |_/ \_| \_\__,_|_|\___||___/
-           | |                                                                     
-           |_|                                                                     
-                                                     ___._
-                                                   .'  <0>'-.._
-                                                  /  /.--.____")
-                                                 |   \   __.-'~
-                                                 |  :  -'/
-                                                /:.  :.-'
-__________                                     | : '. |
-'--.____  '--------.______       _.----.-----./      :/
-        '--.__            `'----/       '-.      __ :/
-              '-.___           :           \   .'  )/
-                    '---._           _.-'   ] /  _/
-                         '-._      _/     _/ / _/
-                             \_ .-'____.-'__< |  \___
-                               <_______.\    \_\_---.7
-                              |   /'=r_.-'     _\\ =/
-                          .--'   /            ._/'>
-                        .'   _.-'
-                       / .--'
-                      /,/
-                      |/`)
-                      'c=,
-*/
-
 
 /*
 RATS
 */
-//Anydesk
+
 rule AnyDeskExeOnDisk
 {
 meta:
@@ -47,7 +15,6 @@ condition:
  (filesize < 10MB) and (uint16(0) == 0x5a4d) and all of them
 }
 
-//TeamViewer
 rule TeamViewerExeOnDisk
 {
 meta:
@@ -60,7 +27,6 @@ condition:
  (filesize < 50MB) and (uint16(0) == 0x5a4d) and all of them
 }
 
-//TightVNC
 rule TightVNCExeOnDisk
 {
 meta:
@@ -74,7 +40,6 @@ condition:
  (filesize < 5MB) and (uint16(0) == 0x5a4d) and 1 of them
 }
 
-//Splashtop
 rule SplashtopExeOnDisk
 {
 meta:
@@ -87,14 +52,9 @@ condition:
  (filesize < 50MB) and (uint16(0) == 0x5a4d) and all of them
 }
 
-//ATERA Agent - Need to collect binaries
-
-//Screenconnect - Need to collect binaries
-
 /*
 TOOLS
 */
-//ADFind
 rule ADFindExeOnDisk
 {
 meta:
@@ -108,7 +68,6 @@ condition:
  (filesize < 5MB) and (uint16(0) == 0x5a4d) and 1 of them
 }
 
-//Bloodhound
 rule BloodhoundExeOnDisk
 {
 meta:
@@ -121,7 +80,6 @@ condition:
  (filesize < 200MB) and (uint16(0) == 0x5a4d) and all of them
 }
 
-//Advanced IP scanner
 rule AdvancedIPScannerExeOnDisk
 {
 meta:
@@ -134,7 +92,6 @@ strings:
  (filesize < 50MB) and (uint16(0) == 0x5a4d) and 1 of them
 }
 
-//Angry IP Scanner
 rule AngryIPScannerExeOnDisk
 {
 meta:
@@ -152,7 +109,6 @@ condition:
 /*
 Persistence
 */
-//GO Simple Tunnel GOST
 rule GOSimpleTunnelExeOnDisk
 {
 meta:
@@ -165,7 +121,6 @@ condition:
  (filesize < 20MB) and (uint16(0) == 0x5a4d) and all of them
 }
 
-//ngrok
 rule ngrok_binaries {
   meta:
     author      = "Moath Maharmeh"
@@ -201,7 +156,6 @@ rule Ngrok_Config_Files {
    all of them
 }
 
-//Plink
 rule PlinkExeOnDisk
 {
 meta:
@@ -215,7 +169,6 @@ condition:
  (filesize < 5MB) and (uint16(0) == 0x5a4d) and 1 of them
 }
 
-//Putty
 rule PuttyExeOnDisk
 {
 meta:
@@ -233,7 +186,6 @@ condition:
 /*
 Exfiltration
 */
-//Rclone
 rule rclone_binaries {
   meta:
     author      = "Elida Leite"
@@ -268,7 +220,6 @@ rule Rclone_Config_Files {
    all of them
 }
 
-//Filezilla
 rule FilezillaExeOnDisk
 {
 meta:
@@ -282,8 +233,6 @@ condition:
  (filesize < 25MB) and (uint16(0) == 0x5a4d) and all of them
 }
 
-
-//MEGASync
 rule MEGASyncExeOnDisk
 {
 meta:
@@ -299,7 +248,6 @@ condition:
 /*
 Credential Access
 */
-//Procdump
 rule ProcdumpExeOnDisk
 {
 meta:
@@ -312,7 +260,6 @@ condition:
  (filesize < 2MB) and (uint16(0) == 0x5a4d) and all of them
 }
 
-//Mimikatz
 rule MimikatzExeOnDisk
 {
 meta:
@@ -326,7 +273,6 @@ condition:
  (filesize < 10MB) and (uint16(0) == 0x5a4d) and 1 of them
 }
 
-//Lazagne
 rule LazagneExeOnDisk
 {
 meta:

@@ -224,7 +224,7 @@ meta:
   filetype = "exe"
 strings:
  $string0 = "putty@projects.tartarus.org" nocase
- $string1 = "PuTTy" nocase
+ $string1 = "SimonTatham.PuTTy" nocase
 condition:
  (filesize < 5MB) and (uint16(0) == 0x5a4d) and 1 of them
 }

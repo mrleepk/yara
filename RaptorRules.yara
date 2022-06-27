@@ -56,6 +56,7 @@ meta:
   filetype = "exe"
 strings:
  $string0 = "teamviewer" nocase
+ $string1 = "www.teamviewer.com" nocase
 condition:
  (filesize < 50MB) and (uint16(0) == 0x5a4d) and all of them
 }
@@ -69,9 +70,8 @@ meta:
   filetype = "exe"
 strings:
  $string0 = "support@glavsoft.com" nocase
- $string1 = "adfind -default" nocase
 condition:
- (filesize < 5MB) and (uint16(0) == 0x5a4d) and 1 of them
+ (filesize < 5MB) and (uint16(0) == 0x5a4d) and all of them
 }
 
 //Splashtop
@@ -209,7 +209,7 @@ meta:
  description = "Finds Plink Executables on disk"
   filetype = "exe"
 strings:
- $string0 = "plink" nocase
+ $string0 = "plink" nocase fullword
  $string1 = "PLINK_PROTOCOL" nocase
 condition:
  (filesize < 5MB) and (uint16(0) == 0x5a4d) and 1 of them
